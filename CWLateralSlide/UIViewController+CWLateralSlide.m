@@ -20,7 +20,14 @@
 
 // 显示抽屉
 - (void)cw_showDrawerViewController:(UIViewController *)viewController animationType:(CWDrawerAnimationType)animationType configuration:(CWLateralSlideConfiguration *)configuration {
-    
+    [self cw_showDrawerViewController:viewController animationType:CWDrawerAnimationTypeDefault configuration:configuration isAnimated:true];
+}
+
+- (void)cw_showDrawerViewController:(UIViewController *)viewController
+                      animationType:(CWDrawerAnimationType)animationType
+                      configuration:(CWLateralSlideConfiguration *)configuration
+                         isAnimated:(BOOL)isAnimated
+{
     if (viewController == nil) return;
     if (configuration == nil)
         configuration = [CWLateralSlideConfiguration defaultConfiguration];
@@ -44,8 +51,7 @@
     if (@available(iOS 13.0, *)) {
         viewController.modalPresentationStyle =  UIModalPresentationFullScreen;
     }
-    [self presentViewController:viewController animated:YES completion:nil];
-    
+    [self presentViewController:viewController animated:isAnimated completion:nil];
 }
 
 // 注册抽屉手势

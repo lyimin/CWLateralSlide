@@ -34,6 +34,11 @@
                       animationType:(CWDrawerAnimationType)animationType
                       configuration:(CWLateralSlideConfiguration *)configuration;
 
+- (void)cw_showDrawerViewController:(UIViewController *)viewController
+                      animationType:(CWDrawerAnimationType)animationType
+                      configuration:(CWLateralSlideConfiguration *)configuration
+                         isAnimated:(BOOL)isAnimated;
+
 /**
  注册手势驱动方法，侧滑呼出的方向自动确定，一般在viewDidLoad调用，调用之后会添加一个支持侧滑的手势到本控制器
  
