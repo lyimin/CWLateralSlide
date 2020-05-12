@@ -80,13 +80,13 @@
     
     CWMaskView *maskView = [CWMaskView shareInstance];
     // 导航控制器的navigationBar在导航栏先隐藏后显示的情况下会被删除，所以过滤掉导航控制器
-    if (![toVC isKindOfClass:[UINavigationController class]]) {
-        for (UIView *view in toVC.view.subviews) {
-            if (![maskView.toViewSubViews containsObject:view]) {
-                [view removeFromSuperview];
-            }
-        }
-    }
+//    if (![toVC isKindOfClass:[UINavigationController class]]) {
+//        for (UIView *view in toVC.view.subviews) {
+//            if (![maskView.toViewSubViews containsObject:view]) {
+//                [view removeFromSuperview];
+//            }
+//        }
+//    }
     UIView *containerView = [transitionContext containerView];
     UIImageView *backImageView;
     if ([containerView.subviews.firstObject isKindOfClass:[UIImageView class]])
